@@ -32,9 +32,12 @@
 <body>
 
 <h1>Finek Privacy Policy</h1>
-<p class="updated">Last updated: August 3, 2026</p>
+<p class="updated">Last updated: October 2, 2026</p>
 
-<p>Finek ("the app," "we," "us") is a mobile app that lets you ping a friend and have them send back their live location and a photo. This policy explains what information the app collects, how it's used, and the choices you have.</p>
+<p>Finek ("the app," "we," "us") is a mobile app that lets you ping a friend and have them send back their location (and optionally a photo), and plan meetings with friends. This policy explains what information the app collects, how it's used, and the choices you have.</p>
+
+<h2>Who Is Responsible for Your Data</h2>
+<p>Finek is developed and operated by Rachid, an independent developer based in Morocco, who is the data controller for the personal data processed by the app. Contact: <strong>rachid.aitbaih95@gmail.com</strong>.</p>
 
 <h2>Information We Collect</h2>
 
@@ -42,13 +45,24 @@
 
 <p><strong>Recovery email (optional).</strong> You may add a recovery email address when creating your account, but this is entirely optional and not required to use the app. It is used only if you request a password reset, and only that reset flow can access it — it is never shown to other users and never used for any other purpose.</p>
 
-<p><strong>Location data.</strong> When you choose to answer a friend's "FINEK" request, the app collects your device's precise location and sends it to that specific friend. Location is only ever collected when you actively tap to send it — the app does not track or collect your location in the background or at any other time.</p>
+<p><strong>Location data.</strong> The app uses your device's precise location only while you are using it, and never tracks you in the background:</p>
+<ul>
+  <li><strong>Answering a FINEK:</strong> when you tap to answer a friend's FINEK request, your location is sent to that specific friend.</li>
+  <li><strong>Checking in to a meeting:</strong> when you tap "I'm here", the app checks your location against the meeting place to confirm you have arrived. Only the fact that you checked in and the time are saved and shown to the other people in that meeting — your coordinates are not stored or shared.</li>
+  <li><strong>Maps:</strong> when you open a meeting or choose a meeting place, the app uses your location on your own phone to show where you are on the map and how far you are from the place. This is not sent to us or to your friends.</li>
+</ul>
 
 <p><strong>Camera and photos.</strong> The app requests camera access so you can take a photo when answering a FINEK request, and photo library access if you choose to set a profile picture. Photos are stored as part of your account/ping data as described below.</p>
 
+<p><strong>Meetings.</strong> When you create a meeting, the app stores its name, date and time, the meeting place you chose (its name and map coordinates), the friends you invited, and each person's check-in time once they arrive. This is visible only to the people in that meeting. Invited friends can leave a meeting at any time, which removes them from it.</p>
+
+<p><strong>Place search.</strong> When you search for a meeting place, the text you type is sent to OpenStreetMap's search service (Nominatim) to find matching places. Do not type personal information into the search.</p>
+
+<p><strong>Profile links.</strong> If you choose to share your profile, the link contains your username, so anyone you send it to can see your username and open your profile in the app.</p>
+
 <p><strong>Friends and social data.</strong> The app stores your friends list, pending friend requests, and any users you've chosen to block, so these features can work.</p>
 
-<p><strong>Push notification token.</strong> To notify you of friend requests and FINEK pings, the app stores a device push token (provided by Expo's push notification service) linked to your account.</p>
+<p><strong>Push notification token.</strong> To notify you of friend requests, FINEK pings and meeting updates, the app stores a device push token (provided by Expo's push notification service) linked to your account.</p>
 
 <p><strong>Advertising data.</strong> The app shows ads served by Google AdMob. AdMob may collect your device's advertising identifier and other technical data to serve and measure ads. See <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">Google's ad policy</a> and <a href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener">AdMob's data disclosure</a> for details on what Google collects and how it's used.</p>
 
@@ -60,8 +74,33 @@
   <li><strong>Firebase</strong> (Google) — authentication, database, and storage of account and app data. See <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>.</li>
   <li><strong>Expo</strong> — delivers push notifications. See <a href="https://expo.dev/privacy" target="_blank" rel="noopener">Expo's Privacy Policy</a>.</li>
   <li><strong>Google AdMob</strong> — serves in-app ads. See links above.</li>
+  <li><strong>OpenStreetMap</strong> (OpenStreetMap Foundation) — provides the map images and the place search used for meetings. Your device connects to their servers to load the map, which lets them see your IP address and the area of the map being viewed. See the <a href="https://osmfoundation.org/wiki/Privacy_Policy" target="_blank" rel="noopener">OpenStreetMap Foundation Privacy Policy</a>.</li>
+  <li><strong>unpkg</strong> — delivers the map software (Leaflet) to the app when a map is opened; it receives your IP address as part of that request.</li>
 </ul>
 <p>We do not sell your personal information to anyone.</p>
+
+<h2>Where Your Data Is Stored (Transfers Outside Morocco)</h2>
+<p>Finek does not run its own servers. Your data is stored and processed by the following providers, outside Morocco:</p>
+<ul>
+  <li><strong>Google Firebase</strong> — account data, friends, FINEK requests and answers are stored in a Firestore database located in <strong>Belgium (European Union)</strong>. Login is handled by Firebase Authentication (Google).</li>
+  <li><strong>Expo</strong> (650 Industries, <strong>United States</strong>) — receives your push notification token and the notification text in order to deliver notifications to your phone.</li>
+  <li><strong>Google AdMob</strong> (Google, <strong>United States</strong> and other countries) — receives your advertising identifier and technical device data to show ads.</li>
+  <li><strong>OpenStreetMap Foundation</strong> (<strong>United Kingdom</strong>, servers in several countries) — receives your IP address, the map area you view, and any place search you type, in order to show maps and search results.</li>
+  <li><strong>unpkg</strong> (served through Cloudflare, <strong>United States</strong> and other countries) — receives your IP address when the map software is loaded.</li>
+</ul>
+<p>These transfers are carried out in accordance with Moroccan Law No. 09-08 on the protection of individuals with regard to the processing of personal data. Belgium is on the list of countries recognised by the CNDP as providing adequate protection. For transfers to the United States and the United Kingdom, we ask for your explicit consent when you create your account — you cannot create an account without accepting this policy.</p>
+
+<h2>How Long We Keep Your Data</h2>
+<ul>
+  <li>Account data (username, profile photo, friends, settings, recovery email): until you delete your account.</li>
+  <li>Locations and photos sent in response to a FINEK: deleted as soon as your friend views them.</li>
+  <li>Meetings (name, time, place, members and check-in times): kept until the organizer deletes the meeting. If you leave a meeting, your name and check-in are removed from it.</li>
+  <li>Your consent record (date and policy version): kept with your account as proof of consent.</li>
+</ul>
+
+<h2>Your Rights (Law 09-08)</h2>
+<p>Under Moroccan Law No. 09-08 you have the right to <strong>access</strong> your data, to have it <strong>corrected</strong>, to <strong>object</strong> to its processing, and to have it <strong>deleted</strong>. To exercise these rights, email <strong>rachid.aitbaih95@gmail.com</strong> from your recovery email or mention your username. We will reply as quickly as possible. You may also contact the Moroccan data protection authority, the CNDP (<a href="https://www.cndp.ma" target="_blank" rel="noopener">www.cndp.ma</a>).</p>
+<p><!-- CNDP: after you receive your receipt, replace the line below with: "This processing has been declared to the CNDP under receipt no. XXXX." -->This processing is being declared to the CNDP.</p>
 
 <h2>Data Deletion</h2>
 <p>You can remove friends or block users at any time from within the app. To request deletion of your account and all associated data, contact us using the email below — we will process deletion requests within a reasonable time.</p>
