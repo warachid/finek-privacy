@@ -32,7 +32,7 @@
 <body>
 
 <h1>Finek Privacy Policy</h1>
-<p class="updated">Last updated: October 4, 2026</p>
+<p class="updated">Last updated: October 7, 2026</p>
 
 <p>Finek ("the app," "we," "us") is a mobile app that lets you ping a friend and have them send back their location (and optionally a photo), and plan meetings with friends. This policy explains what information the app collects, how it's used, and the choices you have.</p>
 
@@ -43,7 +43,7 @@
 
 <p><strong>Account information.</strong> When you create an account, you choose a username and password. Your username, profile picture or avatar, and friends list are visible to other signed-in users so friends can find and add you. Your password is stored securely by Firebase Authentication (Google) — we never see or store it in plain text.</p>
 
-<p><strong>Recovery email (optional).</strong> You may add a recovery email address when creating your account, but this is entirely optional and not required to use the app. Once you verify it, it also becomes the email your account signs in with, and the app uses it only for logging in and password resets. It is never shown in the app, but because the app looks up this sign-in email from your username before you log in, someone who knows your exact username could technically retrieve it. It is never listed, published, or used for any other purpose.</p>
+<p><strong>Recovery email (optional).</strong> You may add a recovery email address when creating your account, but this is entirely optional and not required to use the app. Once you verify it, it also becomes the email your account signs in with — from then on you log in with that email instead of your username — and the app uses it only for logging in and password resets. It is never shown to other users, listed, published, or used for any other purpose.</p>
 
 <p><strong>Location data.</strong> The app uses your device's precise location only while you are using it, and never tracks you in the background:</p>
 <ul>
@@ -60,14 +60,27 @@
 
 <p><strong>Profile links.</strong> If you choose to share your profile, the link contains your username, so anyone you send it to can see your username and open your profile in the app.</p>
 
-<p><strong>Friends and social data.</strong> The app stores your friends list, pending friend requests, and any users you've chosen to block, so these features can work.</p>
+<p><strong>Friends and social data.</strong> The app stores your friends list, pending friend requests, and any users you've chosen to block, so these features can work. Your blocked list is visible only to you.</p>
 
-<p><strong>Push notification token.</strong> To notify you of friend requests, FINEK pings and meeting updates, the app stores a device push token (provided by Expo's push notification service) linked to your account.</p>
+<p><strong>Push notification token.</strong> To notify you of friend requests, FINEK pings, new messages and meeting updates, the app stores a device push token (provided by Expo's push notification service) linked to your account.</p>
 
 <p><strong>Advertising data.</strong> The app shows ads served by Google AdMob. AdMob may collect your device's advertising identifier and other technical data to serve and measure ads. See <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">Google's ad policy</a> and <a href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener">AdMob's data disclosure</a> for details on what Google collects and how it's used.</p>
 
 <h2>How Photos and Locations Are Handled</h2>
 <p>A photo and location sent in response to a FINEK request are visible to the requesting friend only, and are automatically and permanently deleted as soon as that friend views them (or closes the screen). They are not kept, archived, or used for any other purpose.</p>
+
+<h2>Messages</h2>
+<p>You can send short text messages to your friends in the app. Only friends can message each other, and blocked users cannot send or receive messages.</p>
+<ul>
+  <li><strong>Who can see them:</strong> a message is visible in the app only to you and the friend you sent it to.</li>
+  <li><strong>They disappear after 5 minutes:</strong> each message disappears from the app 5 minutes after it is sent. It is then deleted from our database (Google Firebase) the next time you or your friend open the app. Until then, an expired message stays stored but is never shown again.</li>
+  <li><strong>Not end-to-end encrypted:</strong> messages are protected in transit and by Firebase security rules, but they are not end-to-end encrypted. While a message is stored, it is technically accessible to the developer through the Firebase console and to Google as our hosting provider. We do not read, use or share message content.</li>
+  <li><strong>"Seen":</strong> when you open a chat, your friend can see that you have read their messages. For this, the app stores only the time up to which you have read that chat — never any message text.</li>
+  <li><strong>"Typing…":</strong> while you type in a chat, your friend sees that you are typing. Only a timestamp is stored for this — never what you type — and it is deleted when you send the message or leave the chat.</li>
+  <li><strong>Unsend:</strong> you can delete one of your own messages for both of you before it disappears on its own.</li>
+  <li><strong>Screenshots:</strong> the person you message can take a screenshot or copy a message before it disappears. Only send what you are comfortable sharing.</li>
+  <li><strong>Notifications:</strong> when you receive a message, the notification shows the sender's username and "New message" only — never the text of the message.</li>
+</ul>
 
 <h2>Third-Party Services We Use</h2>
 <ul>
@@ -82,7 +95,7 @@
 <h2>Where Your Data Is Stored (Transfers Outside Morocco)</h2>
 <p>Finek does not run its own servers. Your data is stored and processed by the following providers, outside Morocco:</p>
 <ul>
-  <li><strong>Google Firebase</strong> — account data, friends, FINEK requests and answers are stored in a Firestore database located in <strong>Belgium (European Union)</strong>. Login is handled by Firebase Authentication (Google).</li>
+  <li><strong>Google Firebase</strong> — account data, friends, FINEK requests and answers, and messages are stored in a Firestore database located in <strong>Belgium (European Union)</strong>. Login is handled by Firebase Authentication (Google).</li>
   <li><strong>Expo</strong> (650 Industries, <strong>United States</strong>) — receives your push notification token and the notification text in order to deliver notifications to your phone.</li>
   <li><strong>Google AdMob</strong> (Google, <strong>United States</strong> and other countries) — receives your advertising identifier and technical device data to show ads.</li>
   <li><strong>OpenStreetMap Foundation</strong> (<strong>United Kingdom</strong>, servers in several countries) — receives your IP address, the map area you view, and any place search you type, in order to show maps and search results.</li>
@@ -94,6 +107,7 @@
 <ul>
   <li>Account data (username, profile photo, friends, settings, recovery email): until you delete your account.</li>
   <li>Locations and photos sent in response to a FINEK: deleted as soon as your friend views them.</li>
+  <li>Messages: hidden 5 minutes after they are sent, and deleted from the database the next time you or your friend open the app.</li>
   <li>Meetings (name, time, place, members and check-in times): kept until the organizer deletes the meeting. If you leave a meeting, your name and check-in are removed from it.</li>
   <li>Your consent record (date and policy version): kept with your account as proof of consent.</li>
 </ul>
